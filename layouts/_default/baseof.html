@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+  <link rel="stylesheet" href="{{ "css/site.css" | relURL }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title"><a href="{{ "/hugo-pages-demo" | relURL }}">{{ .Site.Title }}</a></h1>
+      <p class="site-desc">{{ .Site.Params.description }}</p>
+      <nav class="site-nav">
+        <a href="{{ "/hugo-pages-demo" | relURL }}">Accueil</a>
+        <a href="{{ "/posts/" | relURL }}">Articles</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© {{ now.Format "2006" }} · Généré avec <a href="https://gohugo.io/">Hugo</a> · Déployé via GitHub Pages</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,11 @@
+baseURL = "https://Arbaradoz976.github.io/hugo-pages-demo/"
+languageCode = "fr-fr"
+title = "Hugo Pages Starter"
+pagerSize  = 10
+
+[params]
+  author = "Ton Nom"
+  description = "Starter Hugo + GitHub Pages"
+
+[outputs]
+  home = ["HTML", "RSS"]

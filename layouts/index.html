@@ -1,0 +1,13 @@
+{{ define "title" }}{{ .Site.Title }}{{ end }}
+{{ define "main" }}
+<section>
+  <h1>Bienvenue 👋</h1>
+  <p>Ceci est un starter <strong>Hugo</strong> minimal, prêt pour un déploiement <strong>GitHub Pages</strong>.</p>
+  <h2>Articles récents</h2>
+  <ul>
+    {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> <small> · {{ .Date.Format "02 Jan 2006" }}</small></li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}

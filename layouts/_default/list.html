@@ -1,0 +1,16 @@
+{{ define "title" }}{{ .Title }} · {{ .Site.Title }}{{ end }}
+{{ define "main" }}
+<section class="post-list">
+  <h1>{{ .Title }}</h1>
+  {{ if .Content }}<div class="list-intro">{{ .Content }}</div>{{ end }}
+  <ul>
+    {{ range .Paginator.Pages }}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <small> · {{ .Date.Format "02 Jan 2006" }}</small>
+      </li>
+    {{ end }}
+  </ul>
+  {{ template "_internal/pagination.html" . }}
+</section>
+{{ end }}
